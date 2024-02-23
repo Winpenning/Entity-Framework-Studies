@@ -3,7 +3,10 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 
-// data context for the application with the Entity Framework
+/*  
+    @author Winpenning
+    Class for the database connection and entities definition
+*/
 public class BlogDataContext : DbContext{
     public DbSet<Category> Category { get; set; }
     public DbSet<Post> Post { get; set; }
@@ -13,8 +16,10 @@ public class BlogDataContext : DbContext{
     public DbSet<User> User { get; set; }
     // public DbSet<UserRole> UserRole { get; set; }
 
+
+    // method for the database connections using the connection string
     protected override void OnConfiguring
     (DbContextOptionsBuilder options)
-        => options.UseSqlServer("Server=localhost,1433;Database=balta;User ID=sa;Password=1q2w3e4r@#$");
+        => options.UseSqlServer("Server=localhost,1433;Database=Blog;User ID=sa;Password=1q2w3e4r@#$");
     
 }
