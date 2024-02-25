@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Blog;
+
 using System.Linq;
 using Blog.Data;
 using System.Data;
@@ -25,7 +25,7 @@ class Program
                 // add the object to the database
                 case 1:
                     // create the object
-                    var newTag = new Tag { Name = "Programação de jogos", Slug = "desenvolvimento" };
+                    var newTag = new Blog.Tag{ Name = "Programação de jogos", Slug = "desenvolvimento" };
                     
                     // add the object to the table
                     try {context.Tag.Add(newTag);}
