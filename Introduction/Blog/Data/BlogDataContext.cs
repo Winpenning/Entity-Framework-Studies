@@ -10,16 +10,15 @@ using Microsoft.EntityFrameworkCore;
 public class BlogDataContext : DbContext{
     public DbSet<Category> Category { get; set; }
     public DbSet<Post> Post { get; set; }
-    // public DbSet<PostTag> PostTag { get; set; }
-    public DbSet<Role> Role { get; set; }
-    public DbSet<Tag> Tag { get; set; }
     public DbSet<User> User { get; set; }
-    // public DbSet<UserRole> UserRole { get; set; }
-
 
     // method for the database connections using the connection string
     protected override void OnConfiguring
-    (DbContextOptionsBuilder options)
-        => options.UseSqlServer("Server=localhost,1433;Database=Blog;User ID=sa;Password=1q2w3e4r@#$");
+    (DbContextOptionsBuilder options){
+        options.UseSqlServer("Server=localhost,1433;Database=Blog;User ID=sa;Password=1q2w3e4r@#$");
+        
+        // to print the log data
+        options.LogTo(Console.WriteLine);
+    }
     
 }
