@@ -1,7 +1,8 @@
+namespace Blog.Data.Mappings;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Blog.Data.Mappings;
 /*  
     @author Winpenning
     FluentMapping for the Category model <3
