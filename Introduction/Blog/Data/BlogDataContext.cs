@@ -15,10 +15,6 @@ public class BlogDataContext : DbContext{
     // method for the database connections using the connection string
     protected override void OnConfiguring
     (DbContextOptionsBuilder options){
-        options.UseSqlServer("Server=localhost,1433;Database=Blog;User ID=sa;Password=1q2w3e4r@#$");
-        
-        // to print the log data
-        options.LogTo(Console.WriteLine);
-    }
-    
+        options.UseSqlServer("Server=localhost,1433;Database=FluentBlog;User ID=sa;Password=1q2w3e4r@#$");
+    }    
 }
