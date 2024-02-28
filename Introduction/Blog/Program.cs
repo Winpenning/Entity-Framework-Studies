@@ -79,7 +79,7 @@ class Program
                 context.Post.Update(post);
                 context.SaveChanges();
                 break;
-            
+
             case 4:
                 context.User.Add(new User
                 {
@@ -94,18 +94,7 @@ class Program
                 break;
         }*/
 
-        // context.User.Add(new User
-        // {
-        //     Name = "A",
-        //     Email = "A",
-        //     Image = "A",
-        //     Bio = "A",
-        //     PasswordHash = "A",
-        //     Slug = "A"
-        // });
-        // context.SaveChanges();
-
-        var User = context.User.FirstOrDefault(x => x.Id == 1);
+        /* var User = context.User.FirstOrDefault(x => x.Id == 1);
         var Post = new Post
         {
             Author = User,
@@ -122,5 +111,6 @@ class Program
         };
         context.Post.Add(Post);
         context.SaveChanges();
+    }*/
     }
 }
