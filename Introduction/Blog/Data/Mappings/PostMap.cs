@@ -13,7 +13,7 @@ public class PostMap : IEntityTypeConfiguration<Post>
     public void Configure(EntityTypeBuilder<Post> builder)
     {
          // configure the table
-        builder.ToTable("User");
+        builder.ToTable("Post");
 
         // defines the primary key using a lambda function
         builder.HasKey(x=>x.Id);
@@ -25,7 +25,7 @@ public class PostMap : IEntityTypeConfiguration<Post>
 
         builder.Property(x => x.LastUpdateDate)
             .IsRequired()
-            .HasColumnName("LastUpdateData")
+            .HasColumnName("LastUpdateDate")
             .HasColumnType("SMALLDATETIME")
             //.HasDefaultValueSql("GETDATE()")
             .HasDefaultValue(DateTime.Now.ToUniversalTime());

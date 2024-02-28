@@ -14,15 +14,15 @@ class Program
     static void Main(string[] args)
     {
         using var context = new BlogDataContext();
-        int esc = int.Parse(Console.ReadLine());
+        /*int esc = int.Parse(Console.ReadLine());
         switch (esc)
         {
             case 1:
                 var User = new User
                 {
                     Name = "Paulo Henrique Ziemer dos Santos",
-                    Slug = "Winpenning1",
-                    Email = "Email@gmail1.com",
+                    Slug = "1",
+                    Email = "1",
                     Bio = "Your future lover",
                     Image = "ImagePath",
                     PasswordHash = "123456789"
@@ -31,7 +31,7 @@ class Program
                 var Category = new Category
                 {
                     Name = "Backend",
-                    Slug = "backend1"
+                    Slug = "1"
                 };
 
                 var Post = new Post
@@ -79,12 +79,48 @@ class Program
                 context.Post.Update(post);
                 context.SaveChanges();
                 break;
-        }
+            
+            case 4:
+                context.User.Add(new User
+                {
+                    Bio =" a ",
+                    Email = "a@a.com",
+                    Image = "a",
+                    Name = "Paulito",
+                    PasswordHash = "12345",
+                    Slug = "paulo"
+                });
+                context.SaveChanges();
+                break;
+        }*/
 
+        // context.User.Add(new User
+        // {
+        //     Name = "A",
+        //     Email = "A",
+        //     Image = "A",
+        //     Bio = "A",
+        //     PasswordHash = "A",
+        //     Slug = "A"
+        // });
+        // context.SaveChanges();
 
-
-
-
-
+        var User = context.User.FirstOrDefault(x => x.Id == 1);
+        var Post = new Post
+        {
+            Author = User,
+            Body = "Some generic text for example options",
+            Category = new Category
+            {
+                Name = "Category.Name.System.Java.Lang",
+                Slug = "Java.Best.Laguage.Ever"
+            },
+            CreateDate = System.DateTime.Now,
+            Slug = "User post",
+            Summary = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            Title = "First Article"
+        };
+        context.Post.Add(Post);
+        context.SaveChanges();
     }
 }
